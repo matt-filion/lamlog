@@ -1,0 +1,37 @@
+{
+  "name": "lamlog",
+  "version": "1.0.0",
+  "description": "Simple and bereft logging solution for Nodejs AWS Lambda, focused on a tiny code footprint.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://matt-filion@github.com/matt-filion/lamlog.git"
+  },
+  "keywords": [
+    "Logger",
+    "AWSLambda",
+    "Lambda",
+    "Log",
+    "Logging"
+  ],
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "author": "Matt Filion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-filion/lamlog/issues"
+  },
+  "homepage": "https://github.com/matt-filion/lamlog#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6"
+  },
+  "dependencies": {}
+}
