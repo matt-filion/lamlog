@@ -6,6 +6,9 @@ Simple logging solution for Node.js AWS Lambda projects. Focus on brevity, ie a 
 ## Child
 Gets a child logger that will contain the parent history for each logging statement of that child. This allows you to track the specific path of execution that resulted in the logging statement.
 
+## Timer
+To measure the amount of time elapsed between to points, first call ```const myTimer = logger.timer('nameOfTimer)``` then when you are ready to print out the time to console simply pass the timer as an argument to any of the logging methods such as debug ```logger.debug('My Timer',myTimer)```.
+
 ## Levels
 This has a progressive level of logging that allows you to change the verbosity of your application depending on the current runtime needs. For exmaple, you set your logging level to 'error' nothing below that point will be reported to the console.
 
@@ -58,7 +61,7 @@ function SuperSpecial(_logger) {
    * Will take on the logging level of its parent logger, and each logging
    *  statement will reflect the object chain.
    */
-  const logger = _logger.getChild({name:'SuperSpecial'});
+  const logger = _logger.child({name:'SuperSpecial'});
   
   /*
    * Records the current time, so it can be reported in a logging statement later.
@@ -71,5 +74,32 @@ function SuperSpecial(_logger) {
    */
   logger.info(timing);
   //2017-03-18T07:47:03.512Z [info]	Parent.SuperSpecial	NameOfTimer took 0.195009ms
+}
+```
+
+```|TypeScript
+import * as Config from 'lamcfg';
+const logger = new Logger({name:'Parent',level:'trace'});
+
+class SuperSpecial {
+
+  constructor(_logger){
+    this.logger = _logger.child("SuperSpecial");
+  }
+
+  superSpecial():void {
+      
+    /*
+    * Records the current time, so it can be reported in a logging statement later.
+    */
+    const timing = logger.timer('NameOfTimer');
+    
+    /*
+    * A timer can be reported directly in a logging statment and 
+    *  reported appropriately.
+    */
+    logger.info(timing);
+    //2017-03-18T07:47:03.512Z [info]	Parent.SuperSpecial	NameOfTimer took 0.195009ms
+  }
 }
 ```

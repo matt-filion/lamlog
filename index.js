@@ -9,12 +9,12 @@ class Logger {
     };
 
     /* istanbul ignore next */
-    Object.assign(config, typeof _config === 'string' ? {'name':_config} : _config );
+    Object.assign(this.config, typeof _config === 'string' ? {'name':_config} : _config );
 
     /* istanbul ignore next */
     const levelValues = { 'trace': 2, 'debug': 4, 'info': 5, 'warn': 6, 'error': 8 };
     /* istanbul ignore next */
-    const isLevel = level => levelValues[config.level] <= levelValues[level];
+    const isLevel = level => levelValues[this.config.level] <= levelValues[level];
     /* istanbul ignore next */
     const duckTestTimer = toTest => typeof toTest === 'object' && toTest.timer && toTest.name && toTest.timestamp;
     /* istanbul ignore next */
