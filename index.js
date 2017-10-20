@@ -50,7 +50,7 @@ class Logger {
   child(_config) {
     return new Logger({
       name: this.config.name + '.' + (typeof _config === 'string' ? _config : _config.name),
-      level: _config && _config.level ? _config.level : this._config.level
+      level: _config && _config.level ? _config.level : this.config.level
     });
   }
  
