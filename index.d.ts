@@ -33,7 +33,7 @@ declare module "lamlog" {
        * @param message To send to the console.
        * @param object provide context to the message.
        */
-      trace(message:string,object:any):void;
+      trace(message:string,object?:any):void;
       
       /**
        * Debug level messages show if debug or lower (trace) level logging is set.
@@ -41,7 +41,7 @@ declare module "lamlog" {
        * @param message To send to the console.
        * @param object provide context to the message.
        */
-      debug(message:string,object:any):void;
+      debug(message:string,object?:any):void;
       
       /**
        * Info level messages show if info or lower (trace) level logging is set.
@@ -49,7 +49,7 @@ declare module "lamlog" {
        * @param message To send to the console.
        * @param object provide context to the message.
        */
-      info(message:string,object:any):void;
+      info(message:string,object?:any):void;
       
       /**
        * Log level messages show if info or lower (trace) level logging is set.
@@ -57,7 +57,7 @@ declare module "lamlog" {
        * @param message To send to the console.
        * @param object provide context to the message.
        */
-      log(message:string,object:any):void;
+      log(message:string,object?:any):void;
       
       /**
        * Warn level messages show if info or lower (trace) level logging is set.
@@ -65,7 +65,7 @@ declare module "lamlog" {
        * @param message To send to the console.
        * @param object provide context to the message.
        */
-      warn(message:string,object:any):void;
+      warn(message:string,object?:any):void;
   
       /**
        * Error level messages show if info or lower (trace) level logging is set.
@@ -73,7 +73,7 @@ declare module "lamlog" {
        * @param message To send to the console.
        * @param object provide context to the message.
        */
-      error(message:string,object:any):void;
+      error(message:string,object?:any):void;
     }
     
     namespace Logger {
