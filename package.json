@@ -1,6 +1,6 @@
 {
   "name": "lamlog",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple and bereft logging solution for Nodejs AWS Lambda, focused on a tiny code footprint.",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
   ],
   "files": [
     "index.js",
+    "index.d.ts",
     "README.md"
   ],
   "author": "Matt Filion",
