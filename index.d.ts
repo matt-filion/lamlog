@@ -1,11 +1,11 @@
 declare module "lamlog" {
   
-  class Timer {
+  export interface Timer {
     name:string;
     timestamp:any;
   }
 
-  class Settings {
+  export interface Settings {
     /**
      * Name of this logger.
      */
@@ -16,8 +16,10 @@ declare module "lamlog" {
     level:string;
   }
 
-  class Logger{
-    constructor(settings?:Settings | string);
+  export class Logger{
+
+    constructor(name:string);
+    constructor(config:string);
     
     /**
      * Creates a child logger from the parent. Helpful when you have a 
