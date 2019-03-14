@@ -1,6 +1,12 @@
 # lamlog
 Simple logging solution for Node.js AWS Lambda projects. Focus on brevity, ie a tiny code footprint.
 
+# 3.0 
+1. Annotations for convenient tracing.
+1. More access to the powerful features of console https://nodejs.org/api/console.html#console_console_assert_value_message
+1. Less realiance on template strings to print out complex log statements.
+1. TypeScript first implementation.
+
 # Usage
 
 ## Child
